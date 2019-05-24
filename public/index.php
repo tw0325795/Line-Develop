@@ -23,6 +23,17 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
+function asset($path, $secure = null)
+{
+    // is Local if URL end is ".local"
+    if (substr($_SERVER['HTTP_HOST'], -6) == '.local') {
+        return app('url')->asset($path, $secure);
+    }else{
+        // $path before add "/public" if application on Azure
+        return app('url')->asset('/public' . $path, $secure);
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -34,6 +45,7 @@ require __DIR__.'/../vendor/autoload.php';
 | the responses back to the browser and delight our users.
 |
 */
+
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
