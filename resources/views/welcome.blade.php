@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel-2
+                    Laravel-3
                 </div>
 
                 <form method="POST" action="{{route('line.get_message')}}">
