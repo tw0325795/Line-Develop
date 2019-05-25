@@ -85,8 +85,7 @@
                 </div>
 
                 <form method="POST" action="{{route('line.get_message')}}">
-                    @csrf
-                    <input type="text" name="test" value="">
+                    <input type="text" name="data" value="">
                     <button type="submit">submit</button>
                 </form>
                 <div class="links">

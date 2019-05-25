@@ -18,7 +18,7 @@ class LineController extends Controller
 
     public function getMessage(Request $request){
         DevelopLog::create([
-            'data'=>json_encode($request->all)
+            'data'=>json_encode($request->all())
         ]);
         return [];
     }
