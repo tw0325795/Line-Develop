@@ -35,7 +35,7 @@ class LineController extends Controller
             }
         }else{
 
-            $data = $request->event;
+            $data = $request->event[0].'test';
         }
         DevelopLog::create([
             'data'=>json_encode($data)
