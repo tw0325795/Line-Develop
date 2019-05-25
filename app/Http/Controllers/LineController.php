@@ -22,6 +22,10 @@ class LineController extends Controller
     public function getMessage(Request $request){
 
         if(isset($request->events[0]->type) && $request->events[0]->replyToken){
+
+            DevelopLog::create([
+                'data'=>json_encode([$request->events[0]->type,$request->events[0]->replyToken])
+            ]);
             $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
             $bot = new LINEBot($httpClient, ['channelSecret' => env('LINE_SECRET')]);
 
