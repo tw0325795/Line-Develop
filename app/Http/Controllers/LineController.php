@@ -33,8 +33,10 @@ class LineController extends Controller
                 // Failed
                 $data = $response->getHTTPStatus() . ' ' . $response->getRawBody();
             }
+        }else{
+
+            $data = $request->event;
         }
-        
         DevelopLog::create([
             'data'=>json_encode($data)
         ]);
