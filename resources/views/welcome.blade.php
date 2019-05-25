@@ -84,6 +84,11 @@
                     Laravel
                 </div>
 
+                <form method="POST" action="{{route('line.get_message')}}">
+                    @csrf
+                    <input type="text" name="test" value="">
+                    <button type="submit">submit</button>
+                </form>
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
